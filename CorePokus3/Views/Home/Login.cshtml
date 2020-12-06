@@ -1,0 +1,21 @@
+﻿@model CorePokus3.Models.User
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Login</h1>
+
+<div class="container">
+    <h1>Login</h1>
+    @Html.ValidationSummary()
+  
+
+    <form action="LoggingIn" method="POST" class="form-group">
+  
+    Email: <input type="email" name="loginemail" class="form-control">
+    Password: <input type="password" name="loginpw" class="form-control">
+    <br>
+    <input type="submit" name="login" value="Login" class="btn btn-info">
+</form>
+
+

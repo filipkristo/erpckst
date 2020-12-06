@@ -4,6 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CorePokus3.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CorePokus3.Controllers
 {
@@ -20,6 +23,75 @@ namespace CorePokus3.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public IActionResult Login(string Login, string Password)
+        {
+            PasswordHasher<User> hasher = new PasswordHasher<User>();
+
+            User loginUser = _context.Users.Where(User => User.Login == Login).SingleOrDefault();
+            if (loginUser != null)
+            {
+                var hashedPw = hasher.VerifyHashedPassword(loginUser, loginUser.Password, Password);
+                if (hashedPw == PasswordVerificationResult.Success)
+                {
+                    HttpContext.Session.SetString("CurrentUserKey", loginUser.Login);
+                    return RedirectToAction("Account", "Bank", new { userKey = loginUser.Login });
+                }
+            }
+            ViewBag.Error = "Email or Password is not matching";
+            return View("index");
+        }
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        
+        public IActionResult Register(RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                User newUser = new User
+                {
+                    Password = model.Password,
+                    Login = model.Login
+                };
+
+                PasswordHasher<User> hasher = new PasswordHasher<User>();
+                newUser.Password = hasher.HashPassword(newUser, newUser.Password);
+
+                _context.Users.Add(newUser);
+                
+                _context.SaveChanges();
+
+                Person newPerson = new Person
+                {
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    Email = model.Email,
+
+                };
+
+
+                _context.Persons.Add(newPerson);
+                _context.SaveChanges();
+
+                return RedirectToAction("Index" );
+            }
+                return View("Index");
+        }
+
 
 
     }
