@@ -61,6 +61,7 @@ namespace CorePokus3.Controllers
         
         public IActionResult Register(RegisterViewModel model)
         {
+
             if (ModelState.IsValid)
             {
                 Person newPerson = new Person
@@ -82,12 +83,12 @@ namespace CorePokus3.Controllers
 
                 _context.Persons.Add(newPerson);
                 _context.SaveChanges();
-
+                
                 User newUser = new User
                 {
                     Password = model.Password,
                     Login = model.Login,
-                    
+                    PersonId = newPerson.ID
                     
 
                     
@@ -106,6 +107,8 @@ namespace CorePokus3.Controllers
             }
                 return View("Index");
         }
+
+
 
        
 
