@@ -12,7 +12,22 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
+#nullable restore
+#line 1 "C:\Radna Mapa\VS\CorePokus3\CorePokus3\Views\_ViewImports.cshtml"
+using CorePokus3;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 2 "C:\Radna Mapa\VS\CorePokus3\CorePokus3\Views\_ViewImports.cshtml"
+using CorePokus3.Models;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"20113989104c7477e52a55e2f52b54a22359e295", @"/Views/Home/Index.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6d5c7074aff4412ed8a72e6748bdfc72d4430ebc", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<CorePokus3.Models.User>
     {
         #pragma warning disable 1998

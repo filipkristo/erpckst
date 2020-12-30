@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authorization;
 
+
 namespace CorePokus3.Controllers
 {
     public class HomeController : Controller
@@ -62,10 +63,34 @@ namespace CorePokus3.Controllers
         {
             if (ModelState.IsValid)
             {
+                Person newPerson = new Person
+                {
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    Email = model.Email,
+                    IsEmployee = model.IsEmployee,
+                    Address = model.Address,
+                    City = model.City,
+                    DateOfBirth = model.DateOfBirth,
+                    IsOutsorced = model.IsOutsorced,
+                    IsVolunteer = model.IsVolunteer,
+                    PIN = model.PIN
+
+
+                };
+
+
+                _context.Persons.Add(newPerson);
+                _context.SaveChanges();
+
                 User newUser = new User
                 {
                     Password = model.Password,
-                    Login = model.Login
+                    Login = model.Login,
+                    
+                    
+
+                    
                 };
 
                 PasswordHasher<User> hasher = new PasswordHasher<User>();
@@ -75,23 +100,14 @@ namespace CorePokus3.Controllers
                 
                 _context.SaveChanges();
 
-                Person newPerson = new Person
-                {
-                    FirstName = model.FirstName,
-                    LastName = model.LastName,
-                    Email = model.Email,
+                
 
-                };
-
-
-                _context.Persons.Add(newPerson);
-                _context.SaveChanges();
-
-                return RedirectToAction("Index" );
+                return RedirectToAction("Login");
             }
                 return View("Index");
         }
 
+       
 
 
     }
