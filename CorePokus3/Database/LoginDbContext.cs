@@ -7,9 +7,9 @@ using CorePokus3.Models;
 
 namespace CorePokus3.Models
 {
-    public class loginDbContext :  DbContext
+    public class LoginDbContext :  DbContext
     {
-        public loginDbContext(DbContextOptions options) : base(options)
+        public LoginDbContext(DbContextOptions options) : base(options)
         { }
         public DbSet<Person> Persons { get; set; }
         public DbSet<User> Users { get; set; }

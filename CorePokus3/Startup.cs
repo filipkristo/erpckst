@@ -27,7 +27,7 @@ namespace CorePokus3
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddDbContext<loginDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString("myconn")));
+            services.AddDbContext<LoginDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString("myconn")));
             services.AddSession();
         }
 
@@ -44,6 +44,7 @@ namespace CorePokus3
             app.UseStaticFiles();
             app.UseRouting();
             app.UseCors();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

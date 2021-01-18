@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CorePokus3.Migrations
 {
-    [DbContext(typeof(loginDbContext))]
+    [DbContext(typeof(LoginDbContext))]
     partial class loginDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

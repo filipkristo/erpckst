@@ -69,7 +69,6 @@ C:\Radna Mapa\VS\CorePokus3\CorePokus3\obj\Debug\netcoreapp3.1\CorePokus3.RazorC
 C:\Radna Mapa\VS\CorePokus3\CorePokus3\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Radna Mapa\VS\CorePokus3\CorePokus3\obj\Debug\netcoreapp3.1\CorePokus3.RazorTargetAssemblyInfo.cs
 C:\Radna Mapa\VS\CorePokus3\CorePokus3\obj\Debug\netcoreapp3.1\CorePokus3.Views.pdb
-C:\Radna Mapa\VS\CorePokus3\CorePokus3\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
 C:\Radna Mapa\VS\CorePokus3\CorePokus3\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
 C:\Radna Mapa\VS\CorePokus3\CorePokus3\bin\Debug\netcoreapp3.1\EntityFramework.dll
 C:\Radna Mapa\VS\CorePokus3\CorePokus3\bin\Debug\netcoreapp3.1\System.Web.Razor.dll
@@ -149,3 +148,4 @@ C:\Radna Mapa\VS\CorePokus3\CorePokus3\obj\Debug\netcoreapp3.1\CorePokus3.csproj
 C:\Radna Mapa\VS\CorePokus3\CorePokus3\obj\Debug\netcoreapp3.1\CorePokus3.MvcApplicationPartsAssemblyInfo.cache
 C:\Radna Mapa\VS\CorePokus3\CorePokus3\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Radna Mapa\VS\CorePokus3\CorePokus3\obj\Debug\netcoreapp3.1\Razor\Views\Home\Register.cshtml.g.cs
+C:\Radna Mapa\VS\CorePokus3\CorePokus3\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs

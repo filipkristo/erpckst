@@ -13,9 +13,9 @@ namespace CorePokus3.Controllers
 {
     public class HomeController : Controller
     {
-        private loginDbContext _context;
+        private LoginDbContext _context;
 
-        public HomeController(loginDbContext context)
+        public HomeController(LoginDbContext context)
         {
             _context = context;
         }
@@ -44,8 +44,8 @@ namespace CorePokus3.Controllers
                 var hashedPw = hasher.VerifyHashedPassword(loginUser, loginUser.Password, Password);
                 if (hashedPw == PasswordVerificationResult.Success)
                 {
-                    HttpContext.Session.SetString("CurrentUserKey", loginUser.Login);
-                    return RedirectToAction("Account", "Bank", new { userKey = loginUser.Login });
+                    
+                    return RedirectToAction("Index", "Employee");
                 }
             }
             ViewBag.Error = "Email or Password is not matching";
@@ -105,12 +105,16 @@ namespace CorePokus3.Controllers
 
                 return RedirectToAction("Login");
             }
+            //tu treba greska
                 return View("Index");
         }
 
+        //public async Task<IActionResult> Details(int? id)
+        //{
+            
+        //}
 
 
-       
 
 
     }

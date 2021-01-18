@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CorePokus3.Migrations
 {
-    [DbContext(typeof(loginDbContext))]
+    [DbContext(typeof(LoginDbContext))]
     [Migration("20201206153202_secondmigration")]
     partial class secondmigration
     {
